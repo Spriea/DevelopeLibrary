@@ -7,7 +7,8 @@
 
 import UIKit
 
-private let kScrollPageRatio:CGFloat = 0.5 // 翻页滚动距离比例
+private let kScrollPageRatio:CGFloat = 0.4 // 翻页滚动距离比例
+private let kVelocityMin:CGFloat = 0.3 // 翻页滚动速度
 class PageLayout: UICollectionViewFlowLayout {
     
     private var lastOffset: CGPoint!
@@ -23,7 +24,6 @@ class PageLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
         super.prepare()
-        self.collectionView?.decelerationRate = .fast
     }
     
     // 这个方法的返回值，决定了 CollectionView 停止滚动时的偏移量
@@ -35,13 +35,16 @@ class PageLayout: UICollectionViewFlowLayout {
             return proposedContentOffset
         }
         let letfInset = collectionView.contentInset.left
-        let offsetMax: CGFloat = collectionView.contentSize.width - (collectionView.bounds.width + letfInset)
+        let rightInset = collectionView.contentInset.right
+        let offsetMax: CGFloat = collectionView.contentSize.width + rightInset - (collectionView.bounds.width + letfInset)
         let offsetMin: CGFloat = -letfInset
         
-        if proposedContentOffset.x < offsetMin || proposedContentOffset.x > offsetMax {
-            lastOffset.x = proposedContentOffset.x
-            return proposedContentOffset
-        }
+        NSLog("滚动速度：%f 偏移:%f ", velocity.x,proposedContentOffset.x)
+//        if proposedContentOffset.x < offsetMin || proposedContentOffset.x > offsetMax {
+//            NSLog("滚动速度：%f 偏移:%f ", velocity.x,proposedContentOffset.x)
+//            lastOffset.x = proposedContentOffset.x
+//            return proposedContentOffset
+//        }
         
         let subOffset = proposedContentOffset.x - lastOffset.x
         // 位移距离
@@ -50,19 +53,25 @@ class PageLayout: UICollectionViewFlowLayout {
         
         //向左 true, 向右 fasle
         let direction: Bool = subOffset > 0
-        NSLog("滚动速度：%f 偏移:%f ", velocityX,offsetForCurrentPointX)
+//        NSLog("滚动速度：%f 偏移:%f ", velocityX,offsetForCurrentPointX)
         var cOffsetX:CGFloat = 0
-        if velocityX > 0.3 || velocityX < -0.3{
-            cOffsetX = lastOffset.x + (direction ? pageSpace : -pageSpace)
+        if velocityX > kVelocityMin || velocityX < -kVelocityMin{
+            cOffsetX = lastOffset.x + (velocityX > 0 ? pageSpace : -pageSpace)
         }else{
-            if offsetForCurrentPointX > pageSpace*0.4 {
+            if offsetForCurrentPointX > pageSpace*kScrollPageRatio {
                 cOffsetX = lastOffset.x + (direction ? pageSpace : -pageSpace)
             }else{
                 cOffsetX = lastOffset.x
             }
         }
-        let pageOffsetX = CGFloat(Int((cOffsetX+0.5*pageSpace)/pageSpace))*pageSpace-letfInset
+        var pageOffsetX = CGFloat(Int((cOffsetX+0.5*pageSpace)/pageSpace))*pageSpace-letfInset
         
+        // 防止回弹
+        if pageOffsetX >= offsetMax {
+            pageOffsetX = offsetMax
+        }else if pageOffsetX <= offsetMin {
+            pageOffsetX = offsetMin
+        }
         lastOffset.x = pageOffsetX
         return CGPoint(x: pageOffsetX, y: proposedContentOffset.y)
     }
