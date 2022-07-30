@@ -16,6 +16,12 @@
 		F3EBEA0428942C7E0029DD01 /* DevelopeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA0328942C7E0029DD01 /* DevelopeLibraryTests.swift */; };
 		F3EBEA0E28942C7E0029DD01 /* DevelopeLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA0D28942C7E0029DD01 /* DevelopeLibraryUITests.swift */; };
 		F3EBEA1028942C7E0029DD01 /* DevelopeLibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA0F28942C7E0029DD01 /* DevelopeLibraryUITestsLaunchTests.swift */; };
+		F3EBEA1E28942F580029DD01 /* SisypheHomeAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA1D28942F580029DD01 /* SisypheHomeAnimationVC.swift */; };
+		F3EBEA2128943A1A0029DD01 /* NoFullPageScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA2028943A1A0029DD01 /* NoFullPageScrollVC.swift */; };
+		F3EBEA2328943B390029DD01 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA2228943B390029DD01 /* Common.swift */; };
+		F3EBEA2528945A640029DD01 /* NOFullPageScrollFastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA2428945A640029DD01 /* NOFullPageScrollFastVC.swift */; };
+		F3EBEA27289469A10029DD01 /* HomeCardScrollCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA26289469A10029DD01 /* HomeCardScrollCellLayout.swift */; };
+		F3EBEA2D2894D4470029DD01 /* PageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBEA2C2894D4470029DD01 /* PageLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		F3EBEA0928942C7E0029DD01 /* DevelopeLibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevelopeLibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EBEA0D28942C7E0029DD01 /* DevelopeLibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopeLibraryUITests.swift; sourceTree = "<group>"; };
 		F3EBEA0F28942C7E0029DD01 /* DevelopeLibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopeLibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F3EBEA1D28942F580029DD01 /* SisypheHomeAnimationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SisypheHomeAnimationVC.swift; sourceTree = "<group>"; };
+		F3EBEA2028943A1A0029DD01 /* NoFullPageScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFullPageScrollVC.swift; sourceTree = "<group>"; };
+		F3EBEA2228943B390029DD01 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		F3EBEA2428945A640029DD01 /* NOFullPageScrollFastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOFullPageScrollFastVC.swift; sourceTree = "<group>"; };
+		F3EBEA26289469A10029DD01 /* HomeCardScrollCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardScrollCellLayout.swift; sourceTree = "<group>"; };
+		F3EBEA2C2894D4470029DD01 /* PageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +111,12 @@
 		F3EBE9EB28942C7D0029DD01 /* DevelopeLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				F3EBEA1F289439DF0029DD01 /* CollectionView */,
+				F3EBEA1C28942EF80029DD01 /* PageViewController */,
 				F3EBE9EC28942C7D0029DD01 /* AppDelegate.swift */,
 				F3EBE9EE28942C7D0029DD01 /* SceneDelegate.swift */,
 				F3EBE9F028942C7D0029DD01 /* ViewController.swift */,
+				F3EBEA2228943B390029DD01 /* Common.swift */,
 				F3EBE9F228942C7D0029DD01 /* Main.storyboard */,
 				F3EBE9F528942C7D0029DD01 /* Assets.xcassets */,
 				F3EBE9F728942C7E0029DD01 /* LaunchScreen.storyboard */,
@@ -125,6 +140,25 @@
 				F3EBEA0F28942C7E0029DD01 /* DevelopeLibraryUITestsLaunchTests.swift */,
 			);
 			path = DevelopeLibraryUITests;
+			sourceTree = "<group>";
+		};
+		F3EBEA1C28942EF80029DD01 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3EBEA1D28942F580029DD01 /* SisypheHomeAnimationVC.swift */,
+			);
+			path = PageViewController;
+			sourceTree = "<group>";
+		};
+		F3EBEA1F289439DF0029DD01 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F3EBEA2028943A1A0029DD01 /* NoFullPageScrollVC.swift */,
+				F3EBEA2428945A640029DD01 /* NOFullPageScrollFastVC.swift */,
+				F3EBEA26289469A10029DD01 /* HomeCardScrollCellLayout.swift */,
+				F3EBEA2C2894D4470029DD01 /* PageLayout.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +229,7 @@
 				TargetAttributes = {
 					F3EBE9E828942C7D0029DD01 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 					F3EBE9FE28942C7E0029DD01 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -258,8 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3EBEA2528945A640029DD01 /* NOFullPageScrollFastVC.swift in Sources */,
+				F3EBEA27289469A10029DD01 /* HomeCardScrollCellLayout.swift in Sources */,
+				F3EBEA2D2894D4470029DD01 /* PageLayout.swift in Sources */,
+				F3EBEA2128943A1A0029DD01 /* NoFullPageScrollVC.swift in Sources */,
 				F3EBE9F128942C7D0029DD01 /* ViewController.swift in Sources */,
 				F3EBE9ED28942C7D0029DD01 /* AppDelegate.swift in Sources */,
+				F3EBEA1E28942F580029DD01 /* SisypheHomeAnimationVC.swift in Sources */,
+				F3EBEA2328943B390029DD01 /* Common.swift in Sources */,
 				F3EBE9EF28942C7D0029DD01 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 524JPX973F;
@@ -445,6 +487,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +496,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = somer.king.DevelopeLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DevelopeLibrary/CollectionView/DevelopeLibrary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 524JPX973F;
@@ -473,6 +519,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,6 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = somer.king.DevelopeLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DevelopeLibrary/CollectionView/DevelopeLibrary-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
