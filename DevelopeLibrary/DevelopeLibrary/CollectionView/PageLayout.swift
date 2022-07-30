@@ -34,20 +34,21 @@ class PageLayout: UICollectionViewFlowLayout {
         guard let collectionView = self.collectionView else {
             return proposedContentOffset
         }
-        let offsetMax: CGFloat = collectionView.contentSize.width - (collectionView.bounds.width + collectionView.contentInset.left)
-        let offsetMin: CGFloat = -collectionView.contentInset.left
+        let letfInset = collectionView.contentInset.left
+        let offsetMax: CGFloat = collectionView.contentSize.width - (collectionView.bounds.width + letfInset)
+        let offsetMin: CGFloat = -letfInset
         
-        if proposedContentOffset.x <= offsetMin || proposedContentOffset.x >= offsetMax {
+        if proposedContentOffset.x < offsetMin || proposedContentOffset.x > offsetMax {
             lastOffset.x = proposedContentOffset.x
             return proposedContentOffset
         }
         
         let subOffset = proposedContentOffset.x - lastOffset.x
-        // 目标位移点距离当前点距离的绝对值
+        // 位移距离
         let offsetForCurrentPointX: CGFloat = abs(subOffset)
         let velocityX = velocity.x
         
-        // 判断当前滑动方向，向左 true, 向右 fasle
+        //向左 true, 向右 fasle
         let direction: Bool = subOffset > 0
         NSLog("滚动速度：%f 偏移:%f ", velocityX,offsetForCurrentPointX)
         var cOffsetX:CGFloat = 0
@@ -60,7 +61,7 @@ class PageLayout: UICollectionViewFlowLayout {
                 cOffsetX = lastOffset.x
             }
         }
-        let pageOffsetX = CGFloat(Int((cOffsetX+0.5*pageSpace)/pageSpace))*pageSpace-collectionView.contentInset.left
+        let pageOffsetX = CGFloat(Int((cOffsetX+0.5*pageSpace)/pageSpace))*pageSpace-letfInset
         
         lastOffset.x = pageOffsetX
         return CGPoint(x: pageOffsetX, y: proposedContentOffset.y)

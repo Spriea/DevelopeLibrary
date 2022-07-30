@@ -43,11 +43,11 @@ class NOFullPageScrollFastVC: UIViewController {
     var isIncrease = true // 偏移量是否递增
 }
 
-extension NOFullPageScrollFastVC: UIScrollViewDelegate{
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        NSLog("offsetX:%f", scrollView.contentOffset.x)
-    }
-}
+//extension NOFullPageScrollFastVC: UIScrollViewDelegate{
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        NSLog("offsetX:%f", scrollView.contentOffset.x)
+//    }
+//}
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        let offsetX = scrollView.contentOffset.x
 //        let subOffsetX = offsetX - preOffsetX
