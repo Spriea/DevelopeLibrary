@@ -36,7 +36,7 @@ class PageLayout: UICollectionViewFlowLayout {
         }
         let letfInset = collectionView.contentInset.left
         let rightInset = collectionView.contentInset.right
-        let offsetMax: CGFloat = collectionView.contentSize.width + rightInset - (collectionView.bounds.width + letfInset)
+        let offsetMax: CGFloat = collectionView.contentSize.width + rightInset - collectionView.bounds.width
         let offsetMin: CGFloat = -letfInset
         
         NSLog("滚动速度：%f 偏移:%f ", velocity.x,proposedContentOffset.x)
