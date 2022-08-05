@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3CC3858289B74F800410988 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CC3857289B74F800410988 /* NetworkMonitor.swift */; };
 		F3EBE9ED28942C7D0029DD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBE9EC28942C7D0029DD01 /* AppDelegate.swift */; };
 		F3EBE9EF28942C7D0029DD01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBE9EE28942C7D0029DD01 /* SceneDelegate.swift */; };
 		F3EBE9F128942C7D0029DD01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EBE9F028942C7D0029DD01 /* ViewController.swift */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F3CC384B289B6E3800410988 /* DevelopeLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevelopeLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
+		F3CC3857289B74F800410988 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		F3EBE9E928942C7D0029DD01 /* DevelopeLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevelopeLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EBE9EC28942C7D0029DD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3EBE9EE28942C7D0029DD01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3CC384A289B6E1000410988 /* NetworkMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				F3CC384B289B6E3800410988 /* DevelopeLibrary-Bridging-Header.h */,
+				F3CC3857289B74F800410988 /* NetworkMonitor.swift */,
+			);
+			path = NetworkMonitor;
+			sourceTree = "<group>";
+		};
 		F3EBE9E028942C7D0029DD01 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +123,7 @@
 		F3EBE9EB28942C7D0029DD01 /* DevelopeLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				F3CC384A289B6E1000410988 /* NetworkMonitor */,
 				F3EBEA1F289439DF0029DD01 /* CollectionView */,
 				F3EBEA1C28942EF80029DD01 /* PageViewController */,
 				F3EBE9EC28942C7D0029DD01 /* AppDelegate.swift */,
@@ -229,7 +242,7 @@
 				TargetAttributes = {
 					F3EBE9E828942C7D0029DD01 = {
 						CreatedOnToolsVersion = 13.4.1;
-						LastSwiftMigration = 1340;
+						LastSwiftMigration = 1330;
 					};
 					F3EBE9FE28942C7E0029DD01 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -293,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3CC3858289B74F800410988 /* NetworkMonitor.swift in Sources */,
 				F3EBEA2528945A640029DD01 /* NOFullPageScrollFastVC.swift in Sources */,
 				F3EBEA27289469A10029DD01 /* HomeCardScrollCellLayout.swift in Sources */,
 				F3EBEA2D2894D4470029DD01 /* PageLayout.swift in Sources */,
@@ -496,6 +510,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = somer.king.DevelopeLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DevelopeLibrary/NetworkMonitor/DevelopeLibrary-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -527,6 +542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = somer.king.DevelopeLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DevelopeLibrary/NetworkMonitor/DevelopeLibrary-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

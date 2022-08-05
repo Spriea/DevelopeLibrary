@@ -26,7 +26,10 @@ class ViewController: UIViewController {
         vcArray = [SisypheHomeAnimationVC(),NoFullPageScrollVC(),NOFullPageScrollFastVC()]
         view.addSubview(tableView)
         tableView.reloadData()
+        
     }
+
+   
 
 }
 

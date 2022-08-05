@@ -33,6 +33,16 @@ class SisypheHomeAnimationVC: UIViewController {
         
         calendarView.backgroundColor = .red
         calendarView.isUserInteractionEnabled = false
+        
+        let bgLayer1 = CAGradientLayer()
+        bgLayer1.colors = [UIColor.white.withAlphaComponent(0.01).cgColor,
+                           UIColor.white.cgColor]
+        bgLayer1.locations = [0,0.6]
+        bgLayer1.frame = CGRect.init(x: 0, y: 0, width: 30, height: 29)
+        bgLayer1.startPoint = CGPoint(x: 0, y: 1)
+        bgLayer1.endPoint = CGPoint(x: 1.0, y: 1)
+        calendarView.layer.addSublayer(bgLayer1)
+        
         view.addSubview(calendarView)
         
         let cadButton = UIButton.init(frame: view.convert(calendarView.frame, to: topScrollView))
