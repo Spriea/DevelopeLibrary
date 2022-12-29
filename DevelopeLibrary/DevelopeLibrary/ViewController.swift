@@ -22,10 +22,34 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleArray = ["上下抽屉效果，带模块缩小变换","非全屏一页一页滚动(慢)","非全屏一页一页滚动(快)"]
-        vcArray = [SisypheHomeAnimationVC(),NoFullPageScrollVC(),NOFullPageScrollFastVC()]
+        titleArray = ["上下抽屉效果，带模块缩小变换","非全屏一页一页滚动(慢)","非全屏一页一页滚动(快)","文本折叠收起","商品评论结构"]
+        vcArray = [SisypheHomeAnimationVC(),NoFullPageScrollVC(),NOFullPageScrollFastVC(),LabelFoldVC(),StoreCommentVC()]
         view.addSubview(tableView)
         tableView.reloadData()
+        
+        
+//        var text = "哈哈哈\n\n哈哈哈\n\n\n哈哈\n哈哈\n \n \n \nqqq"
+//
+//        let regExpStr = "^[\\n]{2,}$"
+//        let replacement = "\n";
+//
+//        do {
+//            let RE = try NSRegularExpression(pattern: regExpStr, options: .caseInsensitive)
+//            text = RE.stringByReplacingMatches(in: text, options: .reportProgress, range: NSRange(location: 0, length: text.count), withTemplate: replacement)
+//        } catch {
+//
+//        }
+        // 正则表达式使用
+        let test = "哈哈哈\n\n哈\r\r\r哈\r哈\n\n\n哈\r哈\n哈哈\n \n \n \nqqq"
+        let regex = "\r+"
+        do {
+            let RE = try NSRegularExpression(pattern: regex, options: .caseInsensitive)
+            let modified = RE.stringByReplacingMatches(in: test, options: .reportProgress, range: NSRange(location: 0, length: test.count), withTemplate: "\n")
+            print(modified)
+        } catch {
+
+        }
+        
         
     }
 
